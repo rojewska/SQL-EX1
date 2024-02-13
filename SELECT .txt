@@ -1,0 +1,100 @@
+SELECT 
+  id, tresc 
+FROM 
+  pytania 
+WHERE 
+  id BETWEEN 10 AND 12 
+// Wybierz kolumnę id i treść z tabeli pytania, gdzie id jest pomiędzy 10 i 12
+
+
+SELECT 
+  * 
+FROM 
+  pytania 
+WHERE 
+  tresc LIKE "Jak%" 
+// Znajdź treść gdzie trzy pierwsze znaki to JAK
+// WHERE ... LIKE "..." - podobny do 
+// % - Zastępuje ciąg znaków o dowolnej treści i długości 
+
+
+SELECT 
+  * 
+FROM
+  pytania 
+WHERE 
+  tresc LIKE "%C++%" OR 
+  odpa LIKE "%C++%" OR 
+  odpb LIKE "%C++%" OR 
+  odpc LIKE "%C++%" OR 
+  odpd LIKE "%C++%" 
+// Wyszukaj pytania lub odpowiedzi, gdzie występuje C++, obojętnie czy z przodu czy z tyłu
+
+
+SELECT 
+  * 
+FROM 
+  pytania 
+WHERE
+  (kategoria='programowanie' OR
+  kategoria='systemy operacyjne i sieci') AND
+  rok=2012
+// Znajdź pytania z katergorii "programowanie" lub kategrii "systemy operacyjne" z roku 2012
+
+
+SELECT 
+  * 
+FROM 
+  ksiazki 
+ORDER BY 
+  cena DESC 
+  LIMIT 1
+// Wyjmowanie najdroższej książki z bazy 
+// LIMIT - Ilość pozycji wyświetlanych w zapytaniu
+
+
+SELECT 
+  *
+FROM
+  auta
+WHERE
+  idauta>=2 AND idauta<=4
+// Wyszukaj samochody o numerach w bazie od 2 do 4 włącznie
+
+
+SELECT
+  * 
+FROM 
+  zamowienia 
+WHERE 
+  status="wyslano"
+// Książki które zostały wysłane 
+
+
+SELECT 
+  * 
+FROM 
+  klienci 
+WHERE 
+  nazwisko="Rutkowski"
+// Klienci o nazwiskiu "Rutkowski" 
+
+
+SELECT 
+  * 
+FROM
+  ksiazki 
+WHERE 
+  tytul LIKE "%PHP%"
+// Wyszukaj książki z PHP w tytule. Przed i po PHP mogą wystąpić dowlne znaki 
+
+SELECT 
+  * 
+FROM   
+  zamowienia 
+ORDER BY   
+  data DESC
+// Posegreguj według najnowszych zamówień 
+// DESC - malejąco 
+// ASC - rosnąco 
+
